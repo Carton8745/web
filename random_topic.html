@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT Simulator</title>
+</head>
+<body>
+
+<h1>ChatGPT Simulator</h1>
+
+<div id="response"></div>
+<button onclick="generateQuestion()">Generate New Question</button>
+
+<script>
+    const questions = [
+        "What is the meaning of life?",
+        "Tell me a joke.",
+        "Explain the concept of time travel.",
+        "What's your favorite color?"
+        // Add more questions as needed
+    ];
+
+    function generateQuestion() {
+        // Simulate generating a new question (replace this with actual logic)
+        const randomIndex = Math.floor(Math.random() * questions.length);
+        const newQuestion = questions[randomIndex];
+
+        // Display the new question
+        const responseElement = document.getElementById('response');
+        responseElement.innerHTML = `<p><strong>New Question:</strong> ${newQuestion}</p>`;
+    }
+
+    // Add event listener for the "Enter" key
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') {
+            generateQuestion();
+        }
+    });
+</script>
+
+</body>
+</html>
